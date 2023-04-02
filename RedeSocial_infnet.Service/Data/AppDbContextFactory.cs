@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Hosting.Server;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,8 @@ namespace RedeSocial_infnet.Service.Data
         public AppDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=rede_social_infnet;Trusted_Connection=True");
+            optionsBuilder.UseSqlServer("Server = tcp:booksmanagerserver.database.windows.net,1433; Initial Catalog = BooksManagerDB; Persist Security Info = False; User ID = adminserver; Password ={ your_password}; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;");
+            //optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=rede_social_infnet;Trusted_Connection=True");
             return new AppDbContext(optionsBuilder.Options);
         }
     }
