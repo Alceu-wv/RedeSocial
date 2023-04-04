@@ -21,7 +21,7 @@
     },
     "resourceName": {
       "type": "string",
-      "defaultValue": "RedeSocialinfnetMVC",
+      "defaultValue": "testeazure20230404",
       "metadata": {
         "description": "Name of the main resource to be created by this template."
       }
